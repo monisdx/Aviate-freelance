@@ -7,13 +7,16 @@ import detailsRouter from "./routes/details.js"
 import cors from 'cors';
 import cloudinary from 'cloudinary';
 import { Send_Email } from './controllers/mailer.js';
+import dotenv from "dotenv";
 
  connectDb();
 
+ dotenv.config();
+
  cloudinary.v2.config({
-    cloud_name:"dqf02vih2",
-    api_key: "685317331147465",
-    api_secret: "9iwvJnwwLtr094ZhKrDZAhEjkxk",
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
  });
 
 const app = express();

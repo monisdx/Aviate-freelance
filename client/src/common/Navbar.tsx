@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [togglemenu, settogglemenu] = useState(false);
   const navigate = useNavigate();
-
-  
+  const pathname = useLocation().pathname;
 
   return (
     <div className="flex justify-between items-center sticky w-full px-[6rem] py-[.1rem] bg-foreground z-[100] shadow-xl s:p-8 l:px-16 l:py-4">
@@ -18,9 +18,9 @@ const Navbar = () => {
           <h3 className="font-manrope text-black font-extrabold text-2xl s:text-xl">Aviate-freelance</h3>
         </div>
         <div className="flex flex-row l:hidden">
-          <p className="p-style"><a onClick={()=> navigate("/")}>Home</a></p>
-          <p className="p-style"><a onClick={()=> navigate("/about")}>About Us</a></p>
-          <p className="p-style"><a onClick={()=> navigate("/contact")}>Contact Us</a></p>
+          <p className={`p-style ${pathname == "/" ? "active" : "" } `}><a onClick={()=> navigate("/")}>Home</a></p>
+          <p className={`p-style ${pathname == "/about" ? "active" : "" } `}><a onClick={()=> navigate("/about")}>About Us</a></p>
+          <p className={`p-style ${pathname == "/contact" ? "active" : "" } `}><a onClick={()=> navigate("/contact")}>Contact Us</a></p>
           {/* <p className="p-style"><a onClick={()=> navigate("/help")}>Help&Support</a></p> */}
         </div>
       </div>
@@ -33,9 +33,9 @@ const Navbar = () => {
           <div className=" transition duration-500 ease-linear flex w-full h-[60vh] justify-center items-center flex-col text-center bg-white p-8 fixed top-0 right-0 shadow-xl slide-bottom">
             <RiCloseLine color="#060606" className="cursor-pointer absolute top-9 right-8" size={27} onClick={() => settogglemenu(false)}/>
             <div>
-              <p className="p-style"><a onClick={()=> navigate("/")}>Home</a></p>
-              <p className="p-style"><a onClick={()=> navigate("/about")}>About Us</a></p>
-              <p className="p-style"><a onClick={()=> navigate("/contact")}>Contact Us</a></p>
+              <p className={`p-style ${pathname == "/" ? "active" : "" } `}><a onClick={()=> navigate("/")}>Home</a></p>
+              <p className={`p-style ${pathname == "/about" ? "active" : "" } `}><a onClick={()=> navigate("/about")}>About Us</a></p>
+              <p className={`p-style ${pathname == "/contact" ? "active" : "" } `}><a onClick={()=> navigate("/contact")}>Contact Us</a></p>
               {/* <p className="p-style"><a onClick={()=> navigate("/help")}>Help&Support</a></p> */}
             </div>
             <div className="hidden s:block">

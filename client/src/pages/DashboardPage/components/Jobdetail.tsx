@@ -271,12 +271,12 @@ let applied_users_id ;
             </div>
           </div>
         </div>
-        <div className="flex flex-row-reverse justify-between right-0 mt-4 ">
+        {/* <div className="flex flex-row-reverse justify-between right-0 mt-4 ">
       
           <button onClick={()=>{modal.show(<EmailModal finalRows={finalRows}/>)}} className="btn-3" type="button">
             Send Email
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="px-24 py-10 w-fll bg-background flex flex-col justify-center m:px-16 s:px-8">
         <h1 className="font-manrope text-black font-extrabold p-4 text-2xl">

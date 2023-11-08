@@ -47,6 +47,9 @@
   .p-style {
     @apply font-manrope text-black font-medium text-xl  capitalize text-center m-8 cursor-pointer;
   }
+  .active {
+    @apply text-[#4217b7]
+  }
   .footer-h4 {
     @apply font-manrope font-bold text-sm text-foreground mb-4;
   }
